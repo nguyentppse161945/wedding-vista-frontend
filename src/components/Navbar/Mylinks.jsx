@@ -4,8 +4,17 @@ import { FaAddressBook } from "react-icons/fa";
 import { GoChecklist } from "react-icons/go";
 import { GrUserManager } from "react-icons/gr";
 import { MdOutlineSavings } from "react-icons/md";
-import { PiLetterCircleVFill } from "react-icons/pi";
+import { PiHairDryerLight, PiLetterCircleVFill } from "react-icons/pi";
 import { IoMdPersonAdd } from "react-icons/io";
+import { IoCameraOutline } from "react-icons/io5";
+import { CiViewList } from "react-icons/ci";
+import { CiVideoOn } from "react-icons/ci";
+import { BsMusicPlayer } from "react-icons/bs";
+import { BiFoodMenu } from "react-icons/bi";
+import { GiButterflyFlower } from "react-icons/gi";
+
+
+
 
 
 export const links = [
@@ -67,12 +76,12 @@ export const links = [
       {
         Head: "Topwear",
         sublink: [
-          { name: "Barns & farms", link: "/" ,sideBanner:''},
+          { name: "Barns & farms", link: "/" },
           { name: "Hotels", link: "/" },
           { name: "Country clubs", link: "/" },
           { name: "Restaurants", link: "/" },
           { name: "Gardens", link: "/" },
-          { name: "Mansions", link: "/" },
+          { name: "Mansions", link: "/",sideBanner:'src/assets/dinhdoclap.png' },
           { name: "Museums", link: "/" },
     
         ],
@@ -125,44 +134,53 @@ export const links = [
     submenu: true,
     sublinks: [
       {
-        Head: "Topwear",
+        Head: "Start hiring your vendors",
         sublink: [
-          { name: "T-shirt", link: "/" },
-          { name: "Casual shirts", link: "/" },
-          { name: "formal shirts", link: "/" },
-          { name: "formal shirts", link: "/" },
-          { name: "formal shirts", link: "/" },
+          { name: "Photography", link: "/", icon: <IoCameraOutline /> },
+          { name: "Wedding Planning", link: "/", icon: <CiViewList /> },
+          { name: "Video Graphy", link: "/", icon: <CiVideoOn /> },
+          { name: "DJs", link: "/", icon: <BsMusicPlayer /> },
+          { name: "Cartering", link: "/", icon: <BiFoodMenu /> },
+          { name: "Hair and Makeup", link: "/", icon: <PiHairDryerLight  /> },
+          { name: "Flowers", link: "/", icon: <GiButterflyFlower  /> },
+          
         ],
       },
       {
-        Head: "Bottomwear",
+        Head: "Complete your wedding team",
         sublink: [
-          { name: "T-shirt", link: "/" },
-          { name: "Casual shirts", link: "/" },
-          { name: "formal shirts", link: "/" },
-          { name: "formal shirts", link: "/" },
-          { name: "formal shirts", link: "/" },
+          { name: "Event rental", link: "/" },
+          { name: "Photo Booths", link: "/" },
+          { name: "Bands", link: "/" },
+          { name: "Dresses and Attier", link: "/" },
+          { name: "Cakes", link: "/" },
+          { name: "Transportations", link: "/" },
+          { name: "Ceremony Music", link: "/" },
+          { name: "Lighting and Decor", link: "/" },
+          { name: "Invitation", link: "/" },
+          // { name: "Cakes", link: "/" },
+          // { name: "Cakes", link: "/" },
         ],
       },
       {
-        Head: "innerwear",
+        Head: "Destination Wedding",
         sublink: [
-          { name: "T-shirt", link: "/" },
-          { name: "Casual shirts", link: "/" },
-          { name: "formal shirts", link: "/" },
-          { name: "formal shirts", link: "/" },
-          { name: "formal shirts", link: "/" },
+          { name: "Easily plan your wedding location.", link: "/" },
+          // { name: "Casual shirts", link: "/" },
+          // { name: "formal shirts", link: "/" },
+          // { name: "formal shirts", link: "/" },
+          // { name: "formal shirts", link: "/" },
         ],
       },
 
       {
-        Head: "sleepwear",
+        Head: "Couple's Choices Awards",
         sublink: [
-          { name: "T-shirt", link: "/" },
-          { name: "Casual shirts", link: "/" },
-          { name: "formal shirts", link: "/" },
-          { name: "formal shirts", link: "/" },
-          { name: "formal shirts", link: "/" },
+          { name: "Check out this year's best lcoal pros , rated by couple like you", link: "/" },
+          // { name: "Casual shirts", link: "/" },
+          // { name: "formal shirts", link: "/" },
+          // { name: "formal shirts", link: "/" },
+          // { name: "formal shirts", link: "/" },
         ],
       },
       // {
@@ -182,44 +200,45 @@ export const links = [
     submenu: true,
     sublinks: [
       {
-        Head: "Topwear",
+        Head: "Get Wedding inspiration",
         sublink: [
-          { name: "T-shirt", link: "/" },
-          { name: "Casual shirts", link: "/" },
-          { name: "formal shirts", link: "/" },
-          { name: "formal shirts", link: "/" },
-          { name: "formal shirts", link: "/" },
+          { name: "Planning Basics", link: "/" },
+          { name: "Wedding Ceremony", link: "/" },
+          { name: "Wedding Reception", link: "/" },
+          { name: "Wedding Services", link: "/" },
+          { name: "Wedding Fashion", link: "/" },
         ],
       },
       {
-        Head: "Bottomwear",
+        Head: "",
         sublink: [
-          { name: "T-shirt", link: "/" },
-          { name: "Casual shirts", link: "/" },
-          { name: "formal shirts", link: "/" },
-          { name: "formal shirts", link: "/" },
-          { name: "formal shirts", link: "/" },
+          { name: "Hairs & Makeup", link: "/" },
+          { name: "Destination Wedding", link: "/" },
+          { name: "Married Life", link: "/" },
+          { name: "Event Parties", link: "/" },
+          { name: "Family and Friends", link: "/" },
         ],
       },
       {
-        Head: "innerwear",
+        Head: "Real Wedding",
         sublink: [
-          { name: "T-shirt", link: "/" },
-          { name: "Casual shirts", link: "/" },
-          { name: "formal shirts", link: "/" },
-          { name: "formal shirts", link: "/" },
-          { name: "formal shirts", link: "/" },
+          { name: "Find wedding inspiration that fits your style with photos  from real couple.", link: "/", image:"https://www.weddingwire.com/assets/img/components/header/tabs/realweddings_banner.jpg" },
+          // { name: "Casual shirts", link: "/" },
+          // { name: "formal shirts", link: "/" },
+          // { name: "formal shirts", link: "/" },
+          // { name: "formal shirts", link: "/" },
         ],
       },
 
       {
-        Head: "sleepwear",
+        Head: "Honey Moon",
         sublink: [
-          { name: "T-shirt", link: "/" },
-          { name: "Casual shirts", link: "/" },
-          { name: "formal shirts", link: "/" },
-          { name: "formal shirts", link: "/" },
-          { name: "formal shirts", link: "/" },
+          { name: "Sit back and relax with travel info + exclusive ideals for the hottest honeymoon desinations", link: "/", image:"https://www.weddingwire.com/assets/img/components/header/tabs/honeymoons_banner.jpg" },
+
+          // { name: "Casual shirts", link: "/" },
+          // { name: "formal shirts", link: "/" },
+          // { name: "formal shirts", link: "/" },
+          // { name: "formal shirts", link: "/" },
         ],
       },
       // {
@@ -239,46 +258,45 @@ export const links = [
     submenu: true,
     sublinks: [
       {
-        Head: "Topwear",
+        Head: "Shop by category",
         sublink: [
-          { name: "T-shirt", link: "/" },
-          { name: "Casual shirts", link: "/" },
-          { name: "formal shirts", link: "/" },
-          { name: "formal shirts", link: "/" },
-          { name: "formal shirts", link: "/" },
+          { name: "Wedding Invitations", link: "/" },
+          { name: "Save the dates", link: "/" },
+          { name: "Changes the date", link: "/" },
+          { name: "Ceremony and Reception", link: "/" },
+          { name: "Thank you's", link: "/" },
         ],
       },
+      // {
+      //   Head: "Bottomwear",
+      //   sublink: [
+      //     { name: "T-shirt", link: "/" },
+      //     { name: "Casual shirts", link: "/" },
+      //     { name: "formal shirts", link: "/" },
+      //     { name: "formal shirts", link: "/" },
+      //     { name: "formal shirts", link: "/" },
+      //   ],
+      // },
       {
-        Head: "Bottomwear",
+        Head: "Shop designed by Style",
         sublink: [
-          { name: "T-shirt", link: "/" },
-          { name: "Casual shirts", link: "/" },
-          { name: "formal shirts", link: "/" },
-          { name: "formal shirts", link: "/" },
-          { name: "formal shirts", link: "/" },
-        ],
-      },
-      {
-        Head: "innerwear",
-        sublink: [
-          { name: "T-shirt", link: "/" },
-          { name: "Casual shirts", link: "/" },
-          { name: "formal shirts", link: "/" },
-          { name: "formal shirts", link: "/" },
-          { name: "formal shirts", link: "/" },
+          { name: "Floral", link: "/",image:"https://www.weddingwire.com/assets/img/components/header/tabs/honeymoons_banner.jpg" },
+          { name: "Classic", link: "/",image:"https://www.weddingwire.com/assets/img/components/header/tabs/honeymoons_banner.jpg" },
+          { name: "Rustic", link: "/",image:"https://www.weddingwire.com/assets/img/components/header/tabs/honeymoons_banner.jpg" },
+          { name: "Mordern", link: "/",image:"https://www.weddingwire.com/assets/img/components/header/tabs/honeymoons_banner.jpg" },
         ],
       },
 
-      {
-        Head: "sleepwear",
-        sublink: [
-          { name: "T-shirt", link: "/" },
-          { name: "Casual shirts", link: "/" },
-          { name: "formal shirts", link: "/" },
-          { name: "formal shirts", link: "/" },
-          { name: "formal shirts", link: "/" },
-        ],
-      },
+      // {
+      //   Head: "sleepwear",
+      //   sublink: [
+      //     { name: "T-shirt", link: "/" },
+      //     { name: "Casual shirts", link: "/" },
+      //     { name: "formal shirts", link: "/" },
+      //     { name: "formal shirts", link: "/" },
+      //     { name: "formal shirts", link: "/" },
+      //   ],
+      // },
       // {
       //   Head: "footwear",
       //   sublink: [
@@ -293,49 +311,49 @@ export const links = [
   },
   {
     name: "MORE",
-    submenu: true,
+    submenu: false,
     sublinks: [
-      {
-        Head: "Topwear",
-        sublink: [
-          { name: "T-shirt", link: "/" },
-          { name: "Casual shirts", link: "/" },
-          { name: "formal shirts", link: "/" },
-          { name: "formal shirts", link: "/" },
-          { name: "formal shirts", link: "/" },
-        ],
-      },
-      {
-        Head: "Bottomwear",
-        sublink: [
-          { name: "T-shirt", link: "/" },
-          { name: "Casual shirts", link: "/" },
-          { name: "formal shirts", link: "/" },
-          { name: "formal shirts", link: "/" },
-          { name: "formal shirts", link: "/" },
-        ],
-      },
-      {
-        Head: "innerwear",
-        sublink: [
-          { name: "T-shirt", link: "/" },
-          { name: "Casual shirts", link: "/" },
-          { name: "formal shirts", link: "/" },
-          { name: "formal shirts", link: "/" },
-          { name: "formal shirts", link: "/" },
-        ],
-      },
+      // {
+      //   Head: "Topwear",
+      //   sublink: [
+      //     { name: "T-shirt", link: "/" },
+      //     { name: "Casual shirts", link: "/" },
+      //     { name: "formal shirts", link: "/" },
+      //     { name: "formal shirts", link: "/" },
+      //     { name: "formal shirts", link: "/" },
+      //   ],
+      // },
+      // {
+      //   Head: "Bottomwear",
+      //   sublink: [
+      //     { name: "T-shirt", link: "/" },
+      //     { name: "Casual shirts", link: "/" },
+      //     { name: "formal shirts", link: "/" },
+      //     { name: "formal shirts", link: "/" },
+      //     { name: "formal shirts", link: "/" },
+      //   ],
+      // },
+      // {
+      //   Head: "innerwear",
+      //   sublink: [
+      //     { name: "T-shirt", link: "/" },
+      //     { name: "Casual shirts", link: "/" },
+      //     { name: "formal shirts", link: "/" },
+      //     { name: "formal shirts", link: "/" },
+      //     { name: "formal shirts", link: "/" },
+      //   ],
+      // },
 
-      {
-        Head: "sleepwear",
-        sublink: [
-          { name: "T-shirt", link: "/" },
-          { name: "Casual shirts", link: "/" },
-          { name: "formal shirts", link: "/" },
-          { name: "formal shirts", link: "/" },
-          { name: "formal shirts", link: "/" },
-        ],
-      },
+      // {
+      //   Head: "sleepwear",
+      //   sublink: [
+      //     { name: "T-shirt", link: "/" },
+      //     { name: "Casual shirts", link: "/" },
+      //     { name: "formal shirts", link: "/" },
+      //     { name: "formal shirts", link: "/" },
+      //     { name: "formal shirts", link: "/" },
+      //   ],
+      // },
       // {
       //   Head: "footwear",
       //   sublink: [

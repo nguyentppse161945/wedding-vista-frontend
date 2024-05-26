@@ -1,13 +1,16 @@
 import React from "react";
-import { CiBank } from "react-icons/ci";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.min.css';
+import SwiperCore, { Navigation, Autoplay } from 'swiper';
+import { ChevronLeft, ChevronRight } from "react-feather";
 import Button from "../Button";
+
+SwiperCore.use([Navigation, Autoplay]);
 
 const VendorCard = ({ icon, title, description, bgImage }) => {
   return (
-    <div className="bg-white rounded-lg shadow-md hover:shadow-2xl transition-transform transform hover:scale-105 duration-300 p-4 m-2 h-16rem">
-      <div className="relative flex items-center justify-center h-24 mb-4">
+    <div className="bg-white rounded-lg shadow-md hover:shadow-2xl transition-transform transform hover:scale-105 duration-300 p-4  m-2 h-64">
+      <div className="relative flex items-center justify-center h-24 mb-4 ">
         <div
           className="absolute bg-cover bg-no-repeat bg-center"
           style={{
@@ -16,7 +19,7 @@ const VendorCard = ({ icon, title, description, bgImage }) => {
             height: "88px",
           }}
         />
-        <div className="relative z-10">{icon}</div>
+        <div className="relative z-10 bg-gray-200 rounded-full p-4">{icon}</div>
       </div>
       <h3 className="text-lg font-semibold mb-2">{title}</h3>
       <p className="text-gray-600 h-full text-sm">{description}</p>
@@ -30,7 +33,7 @@ const VendorCardsComponent = () => {
       icon: (
         <img
           src="https://cdn1.weddingwire.com/assets/svg/original/illustration/banquet_hall.svg"
-          alt="Wedding Photographers"
+          alt="Wedding Venues"
           className="h-8"
         />
       ),
@@ -54,7 +57,11 @@ const VendorCardsComponent = () => {
     },
     {
       icon: (
-        <img src="https://cdn1.weddingwire.com/assets/svg/original/illustration/catering.svg" alt="Wedding Caterers" className="h-8" />
+        <img
+          src="https://cdn1.weddingwire.com/assets/svg/original/illustration/catering.svg"
+          alt="Wedding Caterers"
+          className="h-8"
+        />
       ),
       bgImage: "src/assets/smallImg/caterers.png",
       title: "Wedding Caterers",
@@ -63,7 +70,11 @@ const VendorCardsComponent = () => {
     },
     {
       icon: (
-        <img src="https://cdn1.weddingwire.com/assets/svg/original/illustration/dress.svg" alt="Wedding Attire" className="h-8" />
+        <img
+          src="https://cdn1.weddingwire.com/assets/svg/original/illustration/dress.svg"
+          alt="Wedding Attire"
+          className="h-8"
+        />
       ),
       bgImage: "src/assets/smallImg/dress2.png",
       title: "Wedding Attire",
@@ -72,35 +83,93 @@ const VendorCardsComponent = () => {
     },
   ];
 
+  const buttonLabels = [
+    "Wedding Planners",
+    "Wedding Cakes",
+    "Wedding DJs",
+    "Wedding Photographers",
+    "Wedding Hair and Makeup",
+    "Wedding Rentals",
+  ];
+
   return (
     <div className="container mx-auto px-4 mb-6">
       <h2 className="text-2xl font-bold mb-8">Find every vendor you need</h2>
       <p className="text-gray-600 mb-8">
         Connect with seasoned wedding pros to help bring your day to life.
       </p>
-      <Swiper
-        spaceBetween={16}
-        slidesPerView={1}
-        breakpoints={{
-          640: {
-            slidesPerView: 2,
-          },
-          1024: {
-            slidesPerView: 4,
-          },
-        }}
-      >
-        {vendorCards.map((card, index) => (
-          <SwiperSlide key={index}>
-            <VendorCard {...card} />
-          </SwiperSlide>
-        ))}
-      </Swiper>
-      <div className="flex justify-center mt-8">
-        <button className="bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold py-2 my-2 px-4 rounded-full mr-4">
-          Wedding Planners
-        </button>
-        {/* Add more buttons as needed */}
+      <div className="relative">
+        <Swiper
+          spaceBetween={16}
+          slidesPerView={1}
+          breakpoints={{
+            640: {
+              slidesPerView: 2,
+            },
+            1024: {
+              slidesPerView: 4,
+            },
+          }}
+          navigation={{
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          }}
+          autoplay={{ delay: 3000 }}
+          loop={true}
+          pagination={{ clickable: false }} // Hide pagination indicators
+        >
+          {vendorCards.map((card, index) => (
+            <SwiperSlide key={index}>
+              <VendorCard {...card} />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+        <div className="swiper-button-prev absolute top-1/2 transform -translate-y-1/2 left-0 ml-2 bg-white bg-opacity-80 text-gray-800 rounded-full p-1.5 z-10">
+          <ChevronLeft size={12} />
+        </div>
+        <div className="swiper-button-next absolute top-1/2 transform -translate-y-1/2 right-0 mr-2 bg-white bg-opacity-80 text-gray-800 rounded-full p-1.5 z-10">
+          <ChevronRight size={12} />
+        </div>
+      </div>
+      <div className="relative mt-8">
+        <Swiper
+          spaceBetween={16}
+          slidesPerView={2}
+          breakpoints={{
+            640: {
+              slidesPerView: 3,
+            },
+            768: {
+              slidesPerView: 4,
+            },
+            1024: {
+              slidesPerView: 6,
+            },
+          }}
+          navigation={{
+            nextEl: '.button-swiper-button-next',
+            prevEl: '.button-swiper-button-prev',
+          }}
+          autoplay={{ delay: 3000 }}
+          loop={true}
+          pagination={{ clickable: false }} // Hide pagination indicators
+        >
+          {buttonLabels.map((label, index) => (
+            <SwiperSlide key={index}>
+              <button
+                className="bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold py-2 px-4 rounded-full text-sm md:text-base"
+              >
+                {label}
+              </button>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+        <div className="button-swiper-button-prev absolute top-1/2 transform -translate-y-1/2 left-0 ml-2 bg-white bg-opacity-80 text-gray-800 rounded-full p-1.5 z-10">
+          <ChevronLeft size={24} />
+        </div>
+        <div className="button-swiper-button-next absolute top-1/2 transform -translate-y-1/2 right-0 mr-2 bg-white bg-opacity-80 text-gray-800 rounded-full p-1.5 z-10">
+          <ChevronRight size={24} />
+        </div>
       </div>
     </div>
   );

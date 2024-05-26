@@ -1,0 +1,144 @@
+/* Ensure this CSS file only affects the SocialButtons component */
+.buttonList {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+.buttonUl {
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.buttonLi {
+    list-style: none;
+    margin: 0 10px;
+}
+
+.buttonA {
+    display: block;
+    position: relative;
+    padding-left: 20px;
+    text-decoration: none;
+    transition: 0.5s;
+    width: 210px;
+    text-align: left;
+    box-shadow: -20px 20px 10px rgba(0, 0, 0, 0.5);
+    transform: rotate(-30deg) skew(25deg);
+    height: 80px;
+    background: #fff;
+}
+
+.buttonA .fa {
+    line-height: 80px;
+    transition: 0.5s;
+    padding-right: 14px;
+    font-size: 40px;
+    color: #262626;
+}
+
+.buttonA span {
+    transition: 0.5s;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 30px;
+    left: 70px;
+    color: #262626;
+    letter-spacing: 4px;
+}
+
+.buttonA:after,
+.buttonA:before {
+    transition: 0.5s;
+    content: "";
+    position: absolute;
+}
+
+.buttonA:after {
+    bottom: -20px;
+    height: 20px;
+    width: 100%;
+    background: #b1b1b1;
+    left: -10px;
+    transform: rotate(0deg) skewX(-45deg);
+}
+
+.buttonA:before {
+    top: 10px;
+    left: -20px;
+    height: 100%;
+    width: 20px;
+    background: #b1b1b1;
+    transform: rotate(0deg) skewY(-45deg);
+}
+
+.buttonA:hover {
+    transform: rotate(-30deg) skew(25deg) translate(20px, -15px);
+    box-shadow: -50px 50px 50px rgba(0, 0, 0, 0.5);
+}
+
+.buttonLi:hover .fa {
+    color: #fff;
+}
+
+.buttonA:hover span {
+    color: #fff;
+}
+
+.buttonLi:nth-child(1):hover .buttonA {
+    background: #3b5998;
+}
+
+.buttonLi:nth-child(1):hover .buttonA:after {
+    background: #4a69ad;
+}
+
+.buttonLi:nth-child(1):hover .buttonA:before {
+    background: #365492;
+}
+
+.buttonLi:nth-child(2):hover .buttonA {
+    background: #e4405f;
+}
+
+.buttonLi:nth-child(2):hover .buttonA:after {
+    background: #e46880;
+}
+
+.buttonLi:nth-child(2):hover .buttonA:before {
+    background: #d81c3f;
+}
+
+/* Responsive adjustments for mobile devices */
+@media (max-width: 640px) {
+    .buttonA {
+        width: 150px; /* Adjust the width for mobile */
+        height: 60px; /* Adjust the height for mobile */
+    }
+
+    .buttonA .fa {
+        font-size: 30px; /* Adjust the font size for mobile */
+        line-height: 60px; /* Adjust the line height for mobile */
+    }
+
+    .buttonA span {
+        top: 20px; /* Adjust the top position for mobile */
+        left: 50px; /* Adjust the left position for mobile */
+        font-size: 14px; /* Adjust the font size for mobile */
+    }
+
+    .buttonA:after {
+        bottom: -15px; /* Adjust the bottom position for mobile */
+        height: 15px; /* Adjust the height for mobile */
+    }
+
+    .buttonA:before {
+        top: 8px; /* Adjust the top position for mobile */
+        left: -15px; /* Adjust the left position for mobile */
+        width: 15px; /* Adjust the width for mobile */
+    }
+}

@@ -6,11 +6,15 @@ import VendorCardsComponent from "./components/VendorSearch/VendorCardsComponent
 import PeekToolsComponent from "./components/VendorSearch/PeekToolsComponent";
 import Footer from "./components/Footer/Footer";
 import WeddingDressComponent from "./components/VendorSearch/WeddingDressComponent";
+import IdeaAndTipsComponent from "./components/VendorSearch/IdeaAndTipsComponent";
+ import WebsiteComponent from "./components/VendorSearch/WebsiteComponent";
+import ForumsComponent from "./components/VendorSearch/ForumsComponent";
+import DestinationComponent from "./components/VendorSearch/DestinationComponent";
 
 const App = () => {
   return (
     <section
-      className=" w-full font-[Poppins] bg-cover bg-center md:bg-top bg-transition  h-[220vh]"
+      className=" w-full font-[Poppins] bg-cover bg-center md:bg-top bg-transition  h-[215vh]"
       style={{ backgroundImage: 'url("src/assets/dawn.png")' }}
     >
       <Navbar />
@@ -25,9 +29,11 @@ const App = () => {
 
       <PeekToolsComponent/>
       <WeddingDressComponent />
-      {/* <VendorCardsComponent/>
-      <VendorCardsComponent/> */}
-
+      <IdeaAndTipsComponent/>
+       <ForumsComponent/>
+       <WebsiteComponent/>
+       <DestinationComponent/>
+ 
       <Footer/>
     </section>
   );

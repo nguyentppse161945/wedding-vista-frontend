@@ -45,7 +45,7 @@ const Navbar = () => {
         {/* Mobile nav */}
         <ul
           className={`
-        md:hidden bg-white fixed w-full top-0 overflow-y-auto bottom-0 py-24 pl-4
+        md:hidden bg-white fixed w-full top-0 overflow-y-auto bottom-0 py-24 z-40  pl-4
         duration-500 ${open ? "left-0" : "left-[-100%]"}
         `}
         >
@@ -54,7 +54,7 @@ const Navbar = () => {
               Home
             </Link>
           </li>
-          <NavLinks />
+          <NavLinks  className=""/>
           <div className="py-5">
             <Button label="Get Started" />
           </div>

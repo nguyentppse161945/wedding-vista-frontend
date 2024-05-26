@@ -6,3 +6,64 @@
 .bg-transition {
     transition: background-image 600ms ease-in-out;
   }
+
+
+/* button */
+.button-container {
+  transform: translate(-50%, -50%);
+}
+
+.button-container .link_wrapper {
+  position: relative;
+}
+
+.button-container a {
+  display: block;
+  width: 250px;
+  height: 50px;
+  line-height: 50px;
+  font-weight: bold;
+  text-decoration: none;
+  background: #333;
+  text-align: center;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: 3px solid #333;
+  transition: all .35s;
+}
+
+.button-container .icon {
+  width: 50px;
+  height: 50px;
+  border: 3px solid transparent;
+  position: absolute;
+  transform: rotate(45deg);
+  right: 0;
+  top: 0;
+  z-index: -1;
+  transition: all .35s;
+}
+
+.button-container .icon svg {
+  width: 30px;
+  position: absolute;
+  top: calc(50% - 15px);
+  left: calc(50% - 15px);
+  transform: rotate(-45deg);
+  fill: #ff620e;
+  transition: all .35s;
+}
+
+.button-container a:hover {
+  width: 200px;
+  border: 3px solid #ffff;
+  background: transparent;
+  color: #f93d6c;
+}
+
+.button-container a:hover + .icon {
+  border: 3px solid #f93d6c;
+  right: -25%;
+}
+
