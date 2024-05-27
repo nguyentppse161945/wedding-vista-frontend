@@ -33,10 +33,10 @@ const App = () => {
         <DestinationComponent />
         <Footer />
       </section>
-      <Routes>
+      {/* <Routes>
         <Route path="/" element={<VendorComponent />} />
         <Route path="/search/:type/:location" element={<SearchPage />} />
-      </Routes>
+      </Routes> */}
       </>
   );
 };
