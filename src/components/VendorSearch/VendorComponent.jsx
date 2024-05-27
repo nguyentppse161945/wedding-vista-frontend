@@ -1,6 +1,7 @@
 import React from "react";
 import Button from "../Button";
 import { motion } from "framer-motion";
+import SearchComponent from "./SearchComponent";
 
 
 
@@ -25,21 +26,8 @@ const VendorComponent = () => {
             Search over 250,000 local professionals with reviews, pricing,
             availability, and more.
           </p>
-          <div className="mt-6 h-[42px] w-[full] flex flex-row ">
-            <input
-              type="text"
-              placeholder="Wedding Venues"
-              className="px-1 py-2 w-full rounded-l-md border-2 border-slate-700 focus:outline-none focus:ring-1 focus:ring-pink-400"
-            />
-            <input
-              type="text"
-              placeholder="Locations"
-              className="px-4 py-2 w-32 border-2 border-l-0 border-slate-700 focus:outline-none focus:ring-1 focus:ring-pink-400"
-            />
-            <div className="px-4 py-2 bg-gradient-to-r from-pink-200 to-yellow-200 text-slate-700 border-2 border-l-0 border-slate-700 rounded-r-md hover:text-black focus:outline-none focus:ring-2 focus:ring-pink-400">
-              <Button label="Search" className="bg-gradient-to-r from-pink-200 to-yellow-200 hover:text-white " />
-            </div>
-          </div>
+          <SearchComponent/>
+          
 
      </div>
      </motion.div>
@@ -48,7 +36,7 @@ const VendorComponent = () => {
         </div>
         <div className="max-w-lg">
           <img
-            src="\src\assets\wp44.png"
+            src="https://nld.mediacdn.vn/2019/11/10/597a1040-2-1573351685214685995574.jpg"
             alt="Wedding banner"
             className="rounded-lg shadow-lg"
           />
