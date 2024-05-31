@@ -1,6 +1,7 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.min.css";
+import { CiShop } from "react-icons/ci";
 
 const PeekToolsComponent = () => {
   const tools = [
@@ -25,12 +26,27 @@ const PeekToolsComponent = () => {
       buttonText: "Discover our tools",
       icon: "	https://cdn1.weddingwire.com/assets/svg/original/illustration/notebook.svg",
     },
+    // {
+    //   title: "Wedding Venues",
+    //   description:
+    //     "All under control: Checklist, Budget Planner, Seating Chart and much more!",
+    //   buttonText: "Discover our tools",
+    //   icon: "	https://cdn1.weddingwire.com/assets/svg/original/illustration/notebook.svg",
+    // },
+    {
+      title: "Vendors",
+      description:"Find the best wedding vendors near you in every category",
+      buttonText: "Gather your Team",
+      icon: "https://cdn1.weddingwire.com/assets/svg/original/illustration/catering.svg",
+    },
+ 
+
   ];
 
   return (
-    <div className="bg-gray-50 py-12">
+    <div className="bg-gray-50 py-12 w-full">
       <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row items-center justify-between mb-8">
+        <div className="flex flex-col md:flex-row items-center justify-between mb-8 ">
           <div>
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
               Enjoy planning your wedding
@@ -39,7 +55,7 @@ const PeekToolsComponent = () => {
               Start planning your wedding with us, it's free!
             </p>
           </div>
-          <div className="flex flex-wrap justify-center md:justify-start mt-8 md:mt-0">
+          <div className="flex flex-wrap justify-center md:justify-start mt-8 md:mt-0 ">
             {/* <button className="bg-gradient-to-r from-pink-200 to-yellow-200 hover:bg-pink-300 text-pink-500 font-semibold py-2 px-4 rounded-full m-8 h-full mb-4 transition-transform transform hover:scale-105 sparkle">
   Wedding Planners
 </button> */}
@@ -72,7 +88,7 @@ const PeekToolsComponent = () => {
               slidesPerView: 2,
             },
             1024: {
-              slidesPerView: 3,
+              slidesPerView: 4,
             },
           }}
         >
@@ -80,9 +96,9 @@ const PeekToolsComponent = () => {
             <SwiperSlide key={index}>
               <div className="bg-white rounded-lg shadow-md border-4 hover:shadow-lg  transition-transform transform hover:scale-105 duration-300 m-3 p-6 flex ">
                 <div>
-                  <div className="flex justify-between">
+                  <div className="flex justify-between h-[160px]">
                     <div>
-                      <h3 className="text-lg font-semibold text-gray-900 mb-4">
+                      <h3 className="text-lg font-semibold text-gray-900 mb-4 ">
                         {tool.title}
                       </h3>
                       <p className="text-gray-700 mb-4 ">{tool.description}</p>

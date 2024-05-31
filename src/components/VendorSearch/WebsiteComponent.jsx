@@ -36,7 +36,7 @@ const WebsiteComponent = ({ icon, title, description, bgImage }) => {
           ))}
         </div>
         <div className="mt-8 text-center">
-          <button className="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded">Check out more designs</button>
+          <button className="bg-white hover:bg-slate-700 hover:text-white font-bold py-2 px-4 rounded text-slate-700">Check out more designs</button>
         </div>
       </div>
     </div>

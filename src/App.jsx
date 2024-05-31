@@ -1,43 +1,83 @@
-import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Button from "./components/Button";
+import React, { useState } from "react";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Outlet,
+} from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
-import VendorComponent from "./components/VendorSearch/VendorComponent";
-import VendorCardsComponent from "./components/VendorSearch/VendorCardsComponent";
-import PeekToolsComponent from "./components/VendorSearch/PeekToolsComponent";
 import Footer from "./components/Footer/Footer";
-import WeddingDressComponent from "./components/VendorSearch/WeddingDressComponent";
-import IdeaAndTipsComponent from "./components/VendorSearch/IdeaAndTipsComponent";
-import WebsiteComponent from "./components/VendorSearch/WebsiteComponent";
-import ForumsComponent from "./components/VendorSearch/ForumsComponent";
-import DestinationComponent from "./components/VendorSearch/DestinationComponent";
+import Home from "./components/Pages/Home";
+import ContactUsPage from "./components/Pages/ContactUsPage";
 import SearchPage from "./components/Pages/SearchPage";
+import ProductsPage from "./components/Pages/ProductsPage";
+import About from "./components/Pages/About";
+import FAQ from "./components/Pages/FAQ";
+import ProductDetailsPage from "./components/Pages/ProductDetailsPage";
+
+const Layout = () => {
+  return (
+    <div>
+      <Navbar />
+      <Outlet />
+      <Footer />
+    </div>
+  );
+};
 
 const App = () => {
-  return (<>
-      <section
-        className="w-full font-[Poppins] bg-cover bg-center md:bg-top bg-transition h-[215vh]"
-        style={{
-          backgroundImage:
-            'url("https://i.pinimg.com/originals/52/54/24/52542461317e09454235ce54b00c2b00.jpg")',
-        }}
-      >
-        <Navbar />
-        <VendorComponent />
-        <VendorCardsComponent />
-        <PeekToolsComponent />
-        <WeddingDressComponent />
-        <IdeaAndTipsComponent />
-        <ForumsComponent />
-        <WebsiteComponent />
-        <DestinationComponent />
-        <Footer />
-      </section>
-      {/* <Routes>
-        <Route path="/" element={<VendorComponent />} />
-        <Route path="/search/:type/:location" element={<SearchPage />} />
-      </Routes> */}
-      </>
+  const [selectedVenue, setSelectedVenue] = useState("");
+  const [selectedLocation, setSelectedLocation] = useState("");
+
+  const handleVenueSelection = (venue) => {
+    setSelectedVenue(venue);
+  };
+
+  const handleLocationSelection = (location) => {
+    setSelectedLocation(location);
+  };
+
+  const handleSearch = () => {
+    if (selectedVenue && selectedLocation) {
+      navigate(`/search/${selectedVenue}/${selectedLocation}`);
+    } else if (selectedVenue) {
+      navigate(`/search/${selectedVenue}`);
+    } else {
+      navigate(`/search/all`);
+    }
+  };
+  return (
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<Home />} />
+        <Route path="contact-us" element={<ContactUsPage />} />
+        <Route
+          path="search/:venue/:location"
+          element={
+            <SearchPage
+              selectedVenue={selectedVenue}
+              selectedLocation={selectedLocation}
+              handleVenueSelection={handleVenueSelection}
+              handleLocationSelection={handleLocationSelection}
+            />
+          }
+        />
+        <Route
+          path="/search/:venue"
+          element={
+            <SearchPage
+              selectedVenue={selectedVenue}
+              handleVenueSelection={handleVenueSelection}
+            />
+          }
+        />{" "}
+        <Route path="home" element={<Home />} />
+        <Route path="products" element={<ProductsPage />} />
+        <Route path="products/:productId" element={<ProductDetailsPage />} />
+        <Route path="about" element={<About />} />
+        <Route path="faq" element={<FAQ />} />
+      </Route>
+    </Routes>
   );
 };
 
